@@ -1,0 +1,47 @@
+{
+  "color": {
+    "transparent": { "$type": "color", "$value": "transparent" },
+    "current": { "$type": "color", "$value": "currentColor" },
+    "white": { "$type": "color", "$value": "#ffffff" },
+    "black": { "$type": "color", "$value": "#000000" },
+    "primary": {
+      "50": { "$type": "color", "$value": "#f5f4ff" },
+      "100": { "$type": "color", "$value": "#e7e5fe" },
+      "200": { "$type": "color", "$value": "#d2cefd" },
+      "300": { "$type": "color", "$value": "#b5abfc" },
+      "400": { "$type": "color", "$value": "#968ae0" },
+      "500": { "$type": "color", "$value": "#9184d9" },
+      "600": { "$type": "color", "$value": "#796cbf" },
+      "700": { "$type": "color", "$value": "#5d5294" },
+      "800": { "$type": "color", "$value": "#423a6a" },
+      "900": { "$type": "color", "$value": "#2b2741" }
+    },
+    "neutral": {
+      "50": { "$type": "color", "$value": "#f3f5fe" },
+      "100": { "$type": "color", "$value": "#e4e7f5" },
+      "200": { "$type": "color", "$value": "#cfd3e5" },
+      "300": { "$type": "color", "$value": "#b2b6ca" },
+      "400": { "$type": "color", "$value": "#9397ab" },
+      "500": { "$type": "color", "$value": "#75798c" },
+      "600": { "$type": "color", "$value": "#595d6c" },
+      "700": { "$type": "color", "$value": "#3f424d" },
+      "800": { "$type": "color", "$value": "#292b31" },
+      "900": { "$type": "color", "$value": "#161826" }
+    },
+    "danger": {
+      "100": { "$type": "color", "$value": "#fee2e2" },
+      "500": { "$type": "color", "$value": "#dc2626" },
+      "700": { "$type": "color", "$value": "#b91c1c" }
+    },
+    "success": {
+      "100": { "$type": "color", "$value": "#dcfce7" },
+      "500": { "$type": "color", "$value": "#16a34a" },
+      "700": { "$type": "color", "$value": "#15803d" }
+    },
+    "surface": { "$type": "color", "$value": "{color.neutral.50}" },
+    "surface-raised": { "$type": "color", "$value": "{color.white}" },
+    "foreground": { "$type": "color", "$value": "{color.neutral.800}" },
+    "muted": { "$type": "color", "$value": "{color.neutral.500}" },
+    "border": { "$type": "color", "$value": "{color.neutral.200}" }
+  }
+}
