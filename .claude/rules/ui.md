@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'packages/ui/**'
+  - 'giftway-ws/packages/ui/**'
 ---
 
 # ui — shared components

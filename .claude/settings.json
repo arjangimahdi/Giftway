@@ -21,15 +21,14 @@
       "Bash(grep *)",
       "Bash(rg *)",
       "Bash(curl -s http://localhost:*)",
-      "Read(./**)",
-      "Read(../documents/**)"
+      "Read(./**)"
     ],
     "deny": [
       "Read(./.env)",
       "Read(./**/.env)",
-      "Edit(./package-lock.json)",
-      "Edit(./packages/tokens/src/generated/**)",
-      "Write(./packages/tokens/src/generated/**)",
+      "Edit(./giftway-ws/package-lock.json)",
+      "Edit(./giftway-ws/packages/tokens/src/generated/**)",
+      "Write(./giftway-ws/packages/tokens/src/generated/**)",
       "Bash(git push --force*)",
       "Bash(git push -f*)",
       "Bash(rm -rf /*)",

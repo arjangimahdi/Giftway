@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'packages/tokens/**'
+  - 'giftway-ws/packages/tokens/**'
 ---
 
 # tokens — design tokens

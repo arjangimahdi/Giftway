@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'apps/api/**'
+  - 'giftway-ws/apps/api/**'
 ---
 
 # api — Express 5 + Mongoose

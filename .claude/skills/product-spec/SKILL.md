@@ -1,11 +1,11 @@
 ---
 name: product-spec
-description: Find and apply the Giftway product requirements, roadmap phases, and design decisions in ../documents. Use before implementing any user-facing behavior, when asked "what should X do", or when updating roadmap checklists.
+description: Find and apply the Giftway product requirements, roadmap phases, and design decisions in documents. Use before implementing any user-facing behavior, when asked "what should X do", or when updating roadmap checklists.
 ---
 
 # Product spec navigation
 
-All product truth is in `../documents/` (one level above the Nx workspace). Read the relevant file before implementing; don't reconstruct requirements from memory.
+All product truth is in `documents/` (one level above the Nx workspace). Read the relevant file before implementing; don't reconstruct requirements from memory.
 
 ## Where things are
 

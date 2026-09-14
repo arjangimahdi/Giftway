@@ -8,6 +8,7 @@
     "5": { "$type": "dimension", "$value": "1.25rem" },
     "6": { "$type": "dimension", "$value": "1.5rem" },
     "8": { "$type": "dimension", "$value": "2rem" },
+    "9": { "$type": "dimension", "$value": "2.25rem" },
     "10": { "$type": "dimension", "$value": "2.5rem" },
     "12": { "$type": "dimension", "$value": "3rem" },
     "16": { "$type": "dimension", "$value": "4rem" }

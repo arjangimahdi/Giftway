@@ -2,11 +2,11 @@
 
 AI-powered gift recommender. A 5-step wizard (recipient → occasion → interests → anti-preferences → budget) is turned by an LLM into search intents, products are fetched from a partner in real time, hard-filtered by budget and anti-preferences, and shown with a per-product rationale and an outbound link. Affiliate business model: no inventory, no checkout.
 
-Product spec and roadmap: `../documents/` (start at `../documents/README.md`). Treat those documents as the source of truth for behavior; treat this file and `.claude/rules/` as the source of truth for how code is written here.
+Product spec and roadmap: `documents/` (start at `documents/README.md`). Treat those documents as the source of truth for behavior; treat this file and `.claude/rules/` as the source of truth for how code is written here.
 
 ## Workspace
 
-Nx monorepo, npm workspaces, TypeScript everywhere. Package scope is `@giftway-ws`.
+Nx monorepo in `giftway-ws/`, npm workspaces, TypeScript everywhere. Package scope is `@giftway-ws`. All paths and commands below (and in `.claude/rules/`, skills, and commands) are relative to `giftway-ws/` — `cd giftway-ws` before running anything.
 
 | Nx project        | Path              | Stack                                          | Role                                                 |
 | ----------------- | ----------------- | ---------------------------------------------- | ---------------------------------------------------- |
@@ -38,9 +38,9 @@ Before saying a task is done: `npx nx affected -t lint typecheck test build` pas
 - **Anti-preferences and budget are hard filters**, never ranking signals. A product outside `[min, max]` or matching a dislike/allergy/already-owns never reaches the response. When an interest conflicts with an anti-preference, the anti-preference wins.
 - **Every wizard step offers chips and a visible free-text field.** A user must be able to finish with zero typing; free text must never be hidden behind a toggle. Step 4 (anti-preferences) is optional but framed positively ("Help us avoid a miss") and never visually deprioritized.
 - **Currency is Toman (`IRT`).** The Digikala API returns Rial; divide by 10 at the adapter boundary and nowhere else.
-- **Single partner for MVP: Digikala**, via its public JSON search API (`https://api.digikala.com/v1/search/?q=`). Snapp Shop was evaluated and excluded (its `robots.txt` forbids search/API access) — do not add it. See `../documents/engineering/partner-scraping-decisions.md` if present.
+- **Single partner for MVP: Digikala**, via its public JSON search API (`https://api.digikala.com/v1/search/?q=`). Snapp Shop was evaluated and excluded (its `robots.txt` forbids search/API access) — do not add it. See `documents/engineering/partner-scraping-decisions.md` if present.
 - **Latency budget:** 5–15 s expected, 25–30 s hard timeout. The waiting room must show staged, personalized progress driven by real backend events (SSE), never a static spinner and never an infinite wait.
-- **Edge cases are features:** zero results, partial (<3), partner outage, budget-too-low, and timeout each have a defined state (see `../documents/product/06-results-and-edge-cases.md`). Don't collapse them into a generic error.
+- **Edge cases are features:** zero results, partial (<3), partner outage, budget-too-low, and timeout each have a defined state (see `documents/product/06-results-and-edge-cases.md`). Don't collapse them into a generic error.
 - **No accounts in MVP.** Wizard state lives in `localStorage`; nothing user-identifying is stored server-side beyond anonymous analytics events.
 - **Scraping-first; affiliate deferred.** Keep an `affiliateUrl` field (nullable) on product results so affiliate links are a data change later, not a schema change.
 
@@ -56,7 +56,7 @@ Before saying a task is done: `npx nx affected -t lint typecheck test build` pas
 
 ## Brand
 
-Direction "Tagged": lavender accent `primary-500 #9184d9` / `primary-700 #5d5294`, light-first (`neutral-50 #f3f5fe` ground, `neutral-800 #292b31` ink) with a dark toggle (`neutral-900 #161826` ground, `#e9e9ed` ink). Inter for UI, IBM Plex Mono for labels/prices. Pill chips, 8 px buttons, 14 px cards. Logo is a rounded lavender tag with a bold "G". Copy is confident, warm, plain — apologetic only in the timeout state. Copy deck: `../documents/design/copy-deck.md` if present.
+Direction "Tagged": lavender accent `primary-500 #9184d9` / `primary-700 #5d5294`, light-first (`neutral-50 #f3f5fe` ground, `neutral-800 #292b31` ink) with a dark toggle (`neutral-900 #161826` ground, `#e9e9ed` ink). Inter for UI, IBM Plex Mono for labels/prices. Pill chips, 8 px buttons, 14 px cards. Logo is a rounded lavender tag with a bold "G". Copy is confident, warm, plain — apologetic only in the timeout state. Copy deck: `documents/design/copy-deck.md` if present.
 
 ## Open decisions (ask, don't assume)
 

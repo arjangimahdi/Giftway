@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'apps/web/**'
+  - 'giftway-ws/apps/web/**'
 ---
 
 # web — React 19 + Vite + Tailwind v4
@@ -28,7 +28,7 @@ Routes: `/` landing · `/wizard/1`…`/wizard/5` · `/results` (the waiting room
 - Calls to the API go through `src/lib/api.ts` using `import.meta.env.VITE_API_URL` (default `http://localhost:3333`). Don't scatter `fetch` calls in components.
 - Progress from `POST /recommend` is consumed with `EventSource`/streamed fetch and mapped to waiting-room stages; stage durations have min/max clamps so a fast or slow backend never looks janky.
 
-## Wizard rules (from `../documents/product/03-wizard-specification.md`)
+## Wizard rules (from `documents/product/03-wizard-specification.md`)
 
 - One step visible at a time, persistent `03/05` style progress label.
 - Every step: chip group(s) **and** an always-visible free-text field. Chips are multi-select unless noted.
@@ -36,7 +36,7 @@ Routes: `/` landing · `/wizard/1`…`/wizard/5` · `/results` (the waiting room
 - Step 4 "Already has" chips are derived from Step 3 selections; hide the group when empty.
 - Selecting a budget preset fills min/max; editing min/max deselects the preset.
 - State lives in one store persisted to `localStorage`; going back never clears later steps; refresh restores everything. `Refine my answers` returns to `/wizard/1` with state intact; `Start over` clears it.
-- Chip IDs come from the shared constants; user-facing labels live in `src/lib/copy.ts` and follow `../documents/design/copy-deck.md`.
+- Chip IDs come from the shared constants; user-facing labels live in `src/lib/copy.ts` and follow `documents/design/copy-deck.md`.
 
 ## Accessibility
 
