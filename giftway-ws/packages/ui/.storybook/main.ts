@@ -3,9 +3,8 @@ import { dirname } from 'node:path';
 
 import type { StorybookConfig } from '@storybook/react-vite';
 
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { mergeConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 const config: StorybookConfig = {
@@ -16,9 +15,12 @@ const config: StorybookConfig = {
     options: {},
   },
 
+  // @storybook/react-vite already registers @vitejs/plugin-react; adding it
+  // again duplicates the React Refresh preamble ("RefreshRuntime has already
+  // been declared").
   viteFinal: async (config) =>
     mergeConfig(config, {
-      plugins: [react(), tailwindcss(), nxViteTsPaths()],
+      plugins: [tailwindcss(), tsconfigPaths()],
     }),
 };
 

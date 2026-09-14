@@ -62,9 +62,18 @@ export const spacing = {
   '5': '1.25rem',
   '6': '1.5rem',
   '8': '2rem',
+  '9': '2.25rem',
   '10': '2.5rem',
   '12': '3rem',
   '16': '4rem',
+  '20': '5rem',
+  '24': '6rem',
+  '32': '8rem',
+  '40': '10rem',
+  '48': '12rem',
+  '64': '16rem',
+  '80': '20rem',
+  '96': '24rem',
 } as const;
 
 export const font = {

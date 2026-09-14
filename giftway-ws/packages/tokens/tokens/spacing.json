@@ -8,8 +8,17 @@
     "5": { "$type": "dimension", "$value": "1.25rem" },
     "6": { "$type": "dimension", "$value": "1.5rem" },
     "8": { "$type": "dimension", "$value": "2rem" },
+    "9": { "$type": "dimension", "$value": "2.25rem" },
     "10": { "$type": "dimension", "$value": "2.5rem" },
     "12": { "$type": "dimension", "$value": "3rem" },
-    "16": { "$type": "dimension", "$value": "4rem" }
+    "16": { "$type": "dimension", "$value": "4rem" },
+    "20": { "$type": "dimension", "$value": "5rem" },
+    "24": { "$type": "dimension", "$value": "6rem" },
+    "32": { "$type": "dimension", "$value": "8rem" },
+    "40": { "$type": "dimension", "$value": "10rem" },
+    "48": { "$type": "dimension", "$value": "12rem" },
+    "64": { "$type": "dimension", "$value": "16rem" },
+    "80": { "$type": "dimension", "$value": "20rem" },
+    "96": { "$type": "dimension", "$value": "24rem" }
   }
 }
