@@ -7,7 +7,7 @@ description: How to run, build, test, and generate code in the Giftway Nx worksp
 
 ## Projects
 
-`npx nx show projects` lists them. Names: `web`, `@giftway-ws/api`, `ui`, `tokens`. Targets are inferred by plugins in `nx.json` (`@nx/vite`, `@nx/webpack`, `@nx/vitest`, `@nx/eslint`, `@nx/js/typescript`, `@nx/storybook`); see a project's targets with `npx nx show project <name> --web=false`.
+`npx nx show projects` lists them. Names: `web`, `@giftway-ws/api`, `ui`, `tokens`. Targets are inferred by plugins in `nx.json` (`@nx/next`, `@nx/vite`, `@nx/webpack`, `@nx/vitest`, `@nx/eslint`, `@nx/js/typescript`, `@nx/storybook`); see a project's targets with `npx nx show project <name> --web=false`.
 
 ## Everyday
 
@@ -38,7 +38,8 @@ Nx keeps TypeScript project references in every `tsconfig.json` in step with the
 ## Gotchas in this workspace
 
 - `apps/api` builds with webpack to `apps/api/dist/main.js`; `nx serve api` runs that build first. Source changes rebuild automatically.
+- `web` is Next.js: `build` runs `next build` into `apps/web/.next` (standalone output for Docker); `serve`/`start` pin port 4200. Nx's TS plugin skips Next projects, so `web` defines `typegen` (`next typegen`) and `typecheck` explicitly in its `package.json`; `typecheck` depends on `typegen` because `next-env.d.ts` references `.next/types`. `build` forces `NODE_ENV=production` because Nx loads `.env` into tasks.
 - `tsconfig.base.json` uses `module: nodenext`; `ui` and `web` override to `bundler` in their `tsconfig.*.json`. If a new project gets "relative import paths need explicit file extensions", it needs the same override.
 - `test` depends on `^build` (see `targetDefaults`), so the first test run builds `tokens`/`ui`. That's expected.
 - Vitest has `passWithNoTests: true` in `api` and `ui`; an empty suite is green.
-- `.env` is read by `apps/api` via `dotenv/config`; `web` reads `VITE_*` at build time.
+- `.env` is read by `apps/api` via `dotenv/config`; `web` inlines `NEXT_PUBLIC_*` at build time.

@@ -1,3 +1,5 @@
+'use client';
+
 import { useId, type HTMLAttributes } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 

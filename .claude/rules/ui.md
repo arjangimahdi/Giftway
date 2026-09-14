@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'giftway-ws/packages/ui/**'
+  - "giftway-ws/packages/ui/**"
 ---
 
 # ui — shared components
@@ -32,7 +32,8 @@ Then export from `packages/ui/src/index.ts`: the component, its `Variants`, and 
 ## Scope
 
 - `ui` knows nothing about gifts, wizards, or the API. It exports primitives: Button, Badge, Card, Chip, ProgressLabel, Input/Textarea, Logo, etc. Wizard steps and result cards are composed in `apps/web`.
-- No data fetching, no router, no global state in this package.
+- No data fetching, no router, no global state, no Next-specific imports (`next/*`) in this package.
+- Components that use hooks, refs, or attach event handlers start with `'use client';` (Dialog, Select, RangeSlider, SegmentedControl, Chip, Field). Pure presentational components (Button, Card, Badge, Tag, Input, TextArea, Radio, Table) must not — they stay server-renderable in `web`.
 - Peer deps only: `react`, `react-dom`. Don't add runtime dependencies without a reason worth a sentence in the PR.
 
 ## Verify

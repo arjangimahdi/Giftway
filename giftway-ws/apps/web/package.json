@@ -2,13 +2,77 @@
   "name": "@giftway-ws/web",
   "version": "0.0.1",
   "private": true,
+  "nx": {
+    "name": "web",
+    "targets": {
+      "build": {
+        "options": {
+          "env": {
+            "NODE_ENV": "production"
+          }
+        }
+      },
+      "serve": {
+        "options": {
+          "command": "next dev -p 4200"
+        }
+      },
+      "start": {
+        "options": {
+          "command": "next start -p 4200"
+        }
+      },
+      "typegen": {
+        "command": "next typegen",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "cache": true,
+        "inputs": [
+          "production",
+          "^production"
+        ],
+        "outputs": [
+          "{projectRoot}/.next/types",
+          "{projectRoot}/next-env.d.ts"
+        ]
+      },
+      "typecheck": {
+        "command": "tsc --build tsconfig.json --emitDeclarationOnly",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "cache": true,
+        "dependsOn": [
+          "typegen",
+          "^typecheck"
+        ],
+        "inputs": [
+          "production",
+          "^production",
+          "{workspaceRoot}/tsconfig.base.json",
+          {
+            "dependentTasksOutputFiles": "**/*.{d.ts,d.cts,d.mts,tsbuildinfo}",
+            "transitive": true
+          }
+        ],
+        "outputs": [
+          "{projectRoot}/dist/**/*.{d.ts,d.cts,d.mts,tsbuildinfo}",
+          "{projectRoot}/out-tsc/**/*.{d.ts,d.cts,d.mts,tsbuildinfo}"
+        ],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      }
+    }
+  },
   "dependencies": {
     "@giftway-ws/tokens": "^0.0.1",
     "@giftway-ws/ui": "0.0.1",
-    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/postcss": "^4.3.3",
+    "next": "^16.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwindcss": "^4.3.3"
-  },
-  "nx": {
-    "name": "web"
   }
 }

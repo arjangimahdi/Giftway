@@ -6,12 +6,12 @@ AI-powered gift recommender: a 5-step wizard turns "I have no idea what to get t
 
 Nx monorepo (npm workspaces).
 
-| Project  | Path              | What it is                                                                           |
-| -------- | ----------------- | ------------------------------------------------------------------------------------ |
-| `web`    | `apps/web`        | React 19 + Vite + Tailwind v4 + React Router — the wizard, waiting room, and results |
-| `api`    | `apps/api`        | Express 5 + Mongoose (MongoDB) — recommendation pipeline, click tracking             |
-| `tokens` | `packages/tokens` | Design tokens (style-dictionary → Tailwind `@theme` CSS + TS constants)              |
-| `ui`     | `packages/ui`     | Shared React components (tailwind-variants) with Storybook                           |
+| Project  | Path              | What it is                                                                                                        |
+| -------- | ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `web`    | `apps/web`        | React 19 + Next.js 16 (App Router) + Tailwind v4 — the wizard, waiting room, and results, server-rendered for SEO |
+| `api`    | `apps/api`        | Express 5 + Mongoose (MongoDB) — recommendation pipeline, click tracking                                          |
+| `tokens` | `packages/tokens` | Design tokens (style-dictionary → Tailwind `@theme` CSS + TS constants)                                           |
+| `ui`     | `packages/ui`     | Shared React components (tailwind-variants) with Storybook                                                        |
 
 ## Run
 

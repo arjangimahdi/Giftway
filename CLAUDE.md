@@ -10,7 +10,7 @@ Nx monorepo in `giftway-ws/`, npm workspaces, TypeScript everywhere. Package sco
 
 | Nx project        | Path              | Stack                                          | Role                                                 |
 | ----------------- | ----------------- | ---------------------------------------------- | ---------------------------------------------------- |
-| `web`             | `apps/web`        | React 19, Vite, React Router 6, Tailwind v4    | Wizard, waiting room, results                        |
+| `web`             | `apps/web`        | React 19, Next.js 16 (App Router), Tailwind v4 | Wizard, waiting room, results (SSR for SEO)          |
 | `@giftway-ws/api` | `apps/api`        | Express 5, Mongoose 9 (MongoDB), webpack build | Recommendation pipeline, click tracking              |
 | `tokens`          | `packages/tokens` | style-dictionary (DTCG JSON)                   | Design tokens → Tailwind `@theme` CSS + TS constants |
 | `ui`              | `packages/ui`     | React, tailwind-variants, Storybook 10         | Shared components                                    |
@@ -19,7 +19,7 @@ Dependency direction: `web` → `ui` → `tokens`. `api` depends on neither. Nev
 
 ## Commands
 
-Always go through Nx; never call vite/vitest/tsc/webpack directly.
+Always go through Nx; never call next/vite/vitest/tsc/webpack directly.
 
 ```sh
 npx nx serve api                 # http://localhost:3333 (needs MongoDB: docker compose up mongo -d)
