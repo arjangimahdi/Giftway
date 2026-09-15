@@ -5,3 +5,4 @@
 /.nx/workspace-data
 **/next-env.d.ts
 **/.next
+packages/tokens/src/generated/
