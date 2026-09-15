@@ -1,6 +1,23 @@
 import type { Metadata, Viewport } from 'next';
+import { IBM_Plex_Mono, Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
+
+// Self-hosted by next/font; the variables are what the `font.family` tokens
+// reference, so the token stacks resolve without naming Next anywhere else.
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
+  display: 'swap',
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:4200';
 
@@ -26,10 +43,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
-      </body>
+    <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

@@ -17,7 +17,11 @@
     "react-dom": "^19.0.0"
   },
   "nx": {
-    "name": "ui"
+    "name": "ui",
+    "tags": [
+      "scope:web",
+      "type:ui"
+    ]
   },
   "dependencies": {
     "tailwind-variants": "^3.3.1"

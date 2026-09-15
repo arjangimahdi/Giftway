@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="Wedding">
+  <rect x="4" y="14" width="32" height="22" rx="2" fill="#423a6a"/>
+  <rect x="18" y="14" width="4" height="22" fill="#b5abfc"/>
+  <rect x="4" y="23" width="32" height="4" fill="#b5abfc"/>
+  <path d="M15.5 8A3.5 3.5 0 0 1 19 11.5V15H15.5A3.5 3.5 0 0 1 12 11.5A3.5 3.5 0 0 1 15.5 8Z" fill="none" stroke="#9184d9" stroke-width="2"/>
+  <path d="M24.5 8A3.5 3.5 0 0 1 28 11.5A3.5 3.5 0 0 1 24.5 15H21V11.5A3.5 3.5 0 0 1 24.5 8Z" fill="none" stroke="#9184d9" stroke-width="2"/>
+</svg>

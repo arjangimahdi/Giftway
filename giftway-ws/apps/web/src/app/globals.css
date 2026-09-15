@@ -3,9 +3,58 @@
 
 @source '../../../../packages/ui/src';
 
+/* Theme scoping: a subtree opts into the dark palette with `data-theme="dark"`.
+   Only the semantic aliases flip, so components keep using `bg-surface`,
+   `text-foreground`, `border-border` and pick up the right values. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+[data-theme='dark'] {
+  --color-surface: var(--color-neutral-900);
+  --color-surface-raised: var(--color-neutral-800);
+  --color-foreground: var(--color-neutral-100);
+  --color-muted: var(--color-neutral-400);
+  --color-border: var(--color-neutral-800);
+  color-scheme: dark;
+}
+
 body {
   margin: 0;
   background-color: var(--color-surface);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+}
+
+@keyframes gw-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes gw-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@utility animate-float {
+  animation: gw-float var(--float-duration, 9s) ease-in-out infinite;
+}
+
+@utility animate-pulse-dot {
+  animation: gw-pulse var(--pulse-duration, 1.4s) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-dot {
+    animation: none;
+  }
 }

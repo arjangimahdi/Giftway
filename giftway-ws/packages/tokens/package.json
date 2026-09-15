@@ -16,7 +16,11 @@
     "generate": "node scripts/build-tokens.mjs"
   },
   "nx": {
-    "name": "tokens"
+    "name": "tokens",
+    "tags": [
+      "scope:web",
+      "type:util"
+    ]
   },
   "devDependencies": {
     "style-dictionary": "^5.5.2"

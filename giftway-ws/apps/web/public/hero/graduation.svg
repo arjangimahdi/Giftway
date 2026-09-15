@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="Graduation">
+  <path d="M11 17V26A5 5 0 0 0 16 31H24A5 5 0 0 0 29 26V17" fill="none" stroke="#9184d9" stroke-width="2"/>
+  <rect x="2" y="12" width="36" height="6" rx="2" fill="#b5abfc" transform="translate(20 15) skewY(-4) translate(-20 -15)"/>
+  <rect x="34" y="18" width="2" height="12" fill="#9184d9"/>
+  <path d="M31 29H39V31A4 4 0 0 1 35 35A4 4 0 0 1 31 31Z" fill="#9184d9"/>
+</svg>

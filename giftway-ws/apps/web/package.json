@@ -4,6 +4,10 @@
   "private": true,
   "nx": {
     "name": "web",
+    "tags": [
+      "scope:web",
+      "type:app"
+    ],
     "targets": {
       "build": {
         "options": {
@@ -73,6 +77,7 @@
     "next": "^16.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwind-variants": "^3.3.1",
     "tailwindcss": "^4.3.3"
   }
 }

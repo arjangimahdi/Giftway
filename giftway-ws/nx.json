@@ -120,7 +120,9 @@
   },
   "targetDefaults": {
     "test": {
+      "cache": true,
       "dependsOn": ["^build"]
     }
-  }
+  },
+  "nxCloudId": "6aa9007c80546a736c452917"
 }

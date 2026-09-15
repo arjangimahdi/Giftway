@@ -12,6 +12,8 @@ export const buttonVariants = tv({
       secondary: 'border-border hover:bg-foreground/7 active:bg-foreground/14',
       ghost:
         'text-primary-500 hover:bg-primary-500/10 active:bg-primary-500/18',
+      'ghost-secondary':
+        'text-neutral-300 hover:bg-neutral-300/10 active:bg-neutral-300/18',
     },
     size: {
       sm: 'h-8 px-3 text-xs',

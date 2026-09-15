@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="Birthday">
+  <rect x="0" y="38" width="40" height="2" rx="1" fill="#5d5294"/>
+  <rect x="5" y="21" width="30" height="15" rx="2" fill="#423a6a"/>
+  <path d="M8 16H32A4 4 0 0 1 36 20V22A1 1 0 0 1 35 23H5A1 1 0 0 1 4 22V20A4 4 0 0 1 8 16Z" fill="#9184d9"/>
+  <rect x="19" y="8" width="2" height="8" fill="#cfd3e5"/>
+  <path d="M20 0C22.6 0 24 2.8 24 5.85C24 7.75 22.3 9 20 9C17.7 9 16 7.75 16 5.85C16 2.8 17.4 0 20 0Z" fill="#b5abfc"/>
+</svg>
