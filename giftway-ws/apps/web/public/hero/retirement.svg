@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="Retirement">
+  <path d="M13 7V3A3 3 0 0 1 16 0H24A3 3 0 0 1 27 3V7Z" fill="#423a6a"/>
+  <path d="M13 33H27V37A3 3 0 0 1 24 40H16A3 3 0 0 1 13 37Z" fill="#423a6a"/>
+  <circle cx="22" cy="18" r="12" fill="#161826" stroke="#9184d9" stroke-width="2"/>
+  <rect x="21" y="12" width="2" height="8" rx="1" fill="#b5abfc"/>
+  <rect x="21" y="18" width="8" height="2" rx="1" fill="#b5abfc"/>
+  <rect x="0" y="15" width="11" height="4" rx="2" fill="#5d5294"/>
+</svg>

@@ -1,6 +1,6 @@
 # Phase 0 — Foundation
 
-**Status:** ⬜ Not started
+**Status:** 🟨 In progress
 **Depends on:** —
 **References:** [01 — Vision & Business Model](../product/01-vision-and-business-model.md) · [09 — Risks & Open Questions](../product/09-risks-and-open-questions.md)
 
@@ -11,13 +11,15 @@ Establish the project skeleton, key technical decisions, and the business/legal 
 ## Checklist
 
 ### Project setup
+
 - [ ] Initialize git repository and base project structure (frontend, backend, shared)
 - [ ] Choose and document the tech stack (frontend framework, backend runtime, AI provider, scraping approach)
-- [ ] Set up local development environment and README with run instructions
-- [ ] Set up linting, formatting, and basic CI (build + tests on push)
+- [x] Set up local development environment and README with run instructions — giftway-ws/README.md, giftway-ws/docker-compose.yml
+- [x] Set up linting, formatting, and basic CI (build + tests on push) — giftway-ws/eslint.config.mjs, giftway-ws/.prettierrc, .github/workflows/ci.yml
 - [ ] Define environment/config management (API keys for AI provider, partner credentials)
 
 ### Architecture decisions
+
 - [ ] Write an ADR for the wizard → AI → scraper → filter → results pipeline (see [04 — System Flow](../product/04-system-flow-and-architecture.md))
 - [ ] Define the **wizard payload schema** (the structured object the frontend sends to the backend)
 - [ ] Define the **query intent schema** (search term, category hint, relevance rationale, constraint tags)
@@ -25,6 +27,7 @@ Establish the project skeleton, key technical decisions, and the business/legal 
 - [ ] Decide session-persistence mechanism for wizard state (e.g., local/session storage) — no accounts in MVP
 
 ### Partners & legal
+
 - [ ] Identify initial partner list (Digikala, Snapshop, others) and their affiliate programs
 - [ ] Register for affiliate programs and obtain tracking link format per partner
 - [ ] Legal review per partner: scraping ToS, rate limits, official API availability vs. scraping
@@ -32,6 +35,7 @@ Establish the project skeleton, key technical decisions, and the business/legal 
 - [ ] Confirm local currency handling and the "sane minimum budget floor" value for Step 5
 
 ### Design foundations
+
 - [ ] Establish a minimal design system (colors, typography, chip component, buttons, progress indicator)
 - [ ] Draft low-fidelity wireframes for wizard, waiting room, and results page
 - [ ] Write the initial copy deck (step titles, chip labels, positive framing for Step 4, CTA text)

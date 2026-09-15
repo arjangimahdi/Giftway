@@ -54,3 +54,11 @@ vite.config.*.timestamp*
 
 storybook-static
 vitest.config.*.timestamp*
+
+# Next.js
+.next
+out
+
+# Nx / TS build output
+out-tsc
+test-output

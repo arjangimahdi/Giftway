@@ -12,7 +12,8 @@
       "!{projectRoot}/.storybook/**/*",
       "!{projectRoot}/tsconfig.storybook.json",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.mjs"
+      "!{projectRoot}/eslint.config.mjs",
+      "!{projectRoot}/.next/**/*"
     ],
     "sharedGlobals": []
   },
@@ -79,6 +80,17 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "serve",
+        "startTargetName": "start",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
     }
   ],
   "generators": {
@@ -97,11 +109,20 @@
         "linter": "none",
         "unitTestRunner": "none"
       }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "unitTestRunner": "none"
+      }
     }
   },
   "targetDefaults": {
     "test": {
+      "cache": true,
       "dependsOn": ["^build"]
     }
-  }
+  },
+  "nxCloudId": "6aa9007c80546a736c452917"
 }

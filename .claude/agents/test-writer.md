@@ -10,7 +10,7 @@ You write tests in the Giftway Nx workspace. Read `.claude/rules/testing.md` fir
 Process:
 
 1. List the behaviors worth protecting: validation outcomes, filter/rank results, adapter field mapping, store transitions, rendered roles/text, error paths (non-2xx, timeout, malformed item skipped). Skip anything that only proves a function was called.
-2. Write `<Name>.spec.ts(x)` next to the source. Use `vi.stubGlobal('fetch', …)` for partner APIs and small JSON fixtures under `src/scraper/fixtures/` for external shapes. `jsdom` for `ui`/`web`, `node` for `api`.
+2. Write `<Name>.spec.ts(x)` next to the source. Use `vi.stubGlobal('fetch', …)` for partner APIs and small JSON fixtures under `src/scraper/fixtures/` for external shapes. `jsdom` for `ui`/`web`, `node` for `api`. In `web`, `vi.mock('next/navigation')` for client components that navigate.
 3. Run `npx nx test <project>` and make it pass. If a test reveals a real bug, do not bend the test — report the bug with the failing input and stop.
 4. Report: what is now covered, what you deliberately left uncovered and why.
 

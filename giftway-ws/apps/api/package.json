@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "nx": {
+    "tags": [
+      "scope:api",
+      "type:app"
+    ],
     "targets": {
       "prune-lockfile": {
         "dependsOn": [

@@ -1,3 +1,5 @@
+'use client';
+
 import { cloneElement, isValidElement, useId, type ReactNode } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 

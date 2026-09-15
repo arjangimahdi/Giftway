@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useId, type HTMLAttributes, type ReactNode } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
